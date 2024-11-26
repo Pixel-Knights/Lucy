@@ -1,0 +1,67 @@
+html,body{
+    background-color: pink; /*Muda a cor do fundo do site*/
+}
+
+.lucyProfile{  /*Muda a foto de perfil + nome do Chat*/
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: center;
+    align-items: center;
+    color:#FFFCE6;
+    font: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{ /*Muda o quadrado todo principal do chat*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    margin-left: 1;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+.blocktittle{ /*A parte de cima do bloco do chat*/
+    background-color: rgb(155, 14, 131);
+    width: 500px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#block { /*A parte branca do Chat*/
+    background-color: #FFFCE6;
+    width: 500px;
+    height: 600px;
+}
+#blockchat{ /*A parte de baixo do bloco do chat*/
+    background-color: rgb(155, 14, 131);
+    width: 500px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#lucyClose{ /*A figura grande da Lucy no site*/
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 65%;
+    width: 500px;
+    height: auto;   
+}
+#lucyProfilePicture{ /*A imagem de perfil da Lucy*/ 
+    height: 73px;
+    width: auto;
+    margin-top: 4%;
+}
+#mensager{ /*Chat*/
+    background-color: #FFFCE6;
+    width: 360px;
+    height: 30px;
+    border:2px solid black ;
+    border-radius:20px 20px 20px 20px ;
+}
+#button{
+    background-color: pink;
+}

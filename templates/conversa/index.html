@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Lucy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icos/lucyprofile.ico">
+</head>
+
+<body>
+    <!--Images-->
+    <img id="lucyClose" src="images/lucy_mouth_close.png" alt="lucy with mouth close">
+    <!--Block and Inline Elements-->
+    <div class="container">
+        <div class="blocktittle">
+            <div class="lucyProfile">
+                <div id="chatname">Chat With Lucy</div>
+                <img id="lucyProfilePicture" src="images/lucy_profile.png" alt="lucy profile">
+            </div>
+        </div>       
+        <div id="block"></div>
+        <div id="blockchat">
+            <!--Inputs-->
+            <input type="text" id="mensager" placeholder ="Diga Algo...">
+            <input type="button" id="button" value="Send" onclick="enviarMensagem()">
+        </div>
+    </div>
+</body>
+
+<script src ='main.js'></script>
+</html>
