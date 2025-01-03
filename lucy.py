@@ -1,5 +1,4 @@
 from openai import OpenAI
-import json
 
 # Initialize OpenAI client that points to the local LM Studio server
 client = OpenAI(
@@ -9,8 +8,8 @@ client = OpenAI(
 
 # Define the conversation with the AI
 messages = [
-    {"role": "system", "content": "What do you like to do?."}
-#    {"role": "user", "content": "Create 1-3 fictional characters"}
+    {"role": "system", "content": "Apenas responda em português."},
+    {"role": "user", "content": "What do you like to do?"}
 ]
 
 # Define the expected response structure
@@ -49,5 +48,5 @@ response = client.chat.completions.create(
 )
 
 # Parse and display the results
-results = json.loads(response.choices.message.content)
-print(json.dumps(results, indent=2))
+results = response.choices[0].message.content
+print(results)
