@@ -5,29 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat with Lucy</title>
+    <link rel="stylesheet" href="{%static 'styles/reset.css'%}">
     <link rel="stylesheet" href="{%static 'styles/style.css'%}">
     <link rel="shortcut icon" href="{%static 'assets/icos/lucyprofile.ico'%}">
+    
 </head>
 
-<body>
-    <!--Images-->
-    <img id="lucyClose" src="{%static 'assets/images/lucy_mouth_close.png'%}" alt="lucy with mouth close">
+<body class="light-theme">
     <!--Block and Inline Elements-->
-    <div class="container">
-        <div class="blocktittle">
-            <div class="lucyProfile">
-                <div id="chatname">Chat With Lucy</div>
-                <img id="lucyProfilePicture" src="{%static 'assets/images/lucy_profile.png'%}" alt="lucy profile">
+    <div class = "site">
+        <div class ="botão">Dark</div>
+        <div class="container">
+            <div class="blocktittle">
+                <div class="lucyProfile">
+                    <div id="chatname">Lucy</div>
+                    <img id="lucyProfilePicture" src="{%static 'assets/images/lucy_profile.png'%}" alt="lucy profile">
+                </div>
+            </div>       
+            <div id="block"></div>
+            <div id="messages"></div> <!--DIV ONDE AS TAREFAS SÃO ADICIONADAS-->
+            <div id="balao"></div> <!--BALÃO DO USUÁRIO-->
+            <div id="blockchat">
+                <!--Inputs-->
+                <input type="text" id="mensager" placeholder ="Diga Algo...">
+                <button class="btn-animado" id="button" value="Send" onclick="enviarMensagem()">  
             </div>
-        </div>       
-        <div id="block"></div>
-        <div id="blockchat">
-            <!--Inputs-->
-            <input type="text" id="mensager" placeholder ="Diga Algo...">
-            <input type="button" id="button" value="Send" onclick="enviarMensagem()">
+    </div>
+        <!--Images-->
+        <div class="lucyContainer">
+            <div class ="elemento">
+                <img id="heart" src="{%static 'assets/images/heart.png'%}" alt="heart animation">
+            </div>
+            <div class="elemento">
+                <img id="lucyClose" src="{%static 'assets/images/lucy_mouth_close.png'%}" alt="lucy with mouth close">
+            </div>
         </div>
     </div>
 </body>
 
-<script src ="{%static 'js/main.js'%}></script>
-</html>
+<script src ="{%static 'js/main.js'%}"></script>
+<noscript>Você precisa habilitar o JavaScript para acessar o site completo</noscript>
+</html> 

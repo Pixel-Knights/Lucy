@@ -1,6 +1,77 @@
+
 html,body{
-    background-color: pink; /*Muda a cor do fundo do site*/
+    margin: 0; /*Se der erro, a culpa é dessa linha */
+    background-color: rgb(172, 56, 162); /*Muda a cor do fundo do site*/
 }
+
+/* [ALTERAÇAO DE CORES DO SITE] */
+
+.site{
+    border: 2px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+
+/*Conjunto de Aplicações para o código todo*/
+:root{
+    --yellow: #ffd523;
+    --white: #fff;
+    --black: #680F65;
+    --grey:  rgb(92, 92, 86);
+    --lightgrey:  #4E1282;
+    --pink: #821246;
+    --corClara: #D052A9;
+
+    /*Código para mudar o seletor de BODY atual*/
+*{
+    color: var(--fontColor);
+}
+    body{
+    background-color: var(--background);
+    }
+}
+
+.light-theme{
+
+--fontColor: var(--white);
+/*Adicionando o Botão*/
+--background: var(--corClara);
+--botaoBg:  var(--black);
+--botaoFontColor:pink;
+--blockColor: white;
+}
+
+.dark-theme{
+--background: var(--black);
+--fontColor: var(--white);
+/*Adicionando o Botão*/
+--background: var(--black);
+--botaoBg: pink;
+--botaoFontColor:var(--black);
+--blockColor: var(--pink);
+
+}
+.botão :focus {outline-style: none;}
+
+.botão{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex; /* Adicina Flexbox */
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    color: var(--botaoFontColor);
+    background-color: var(--botaoBg);
+    text-align: center;
+}
+
+/* [OUTRAS CONFIGURAÇÕES] */
 
 .lucyProfile{  /*Muda a foto de perfil + nome do Chat*/
     display: flex;
@@ -12,44 +83,69 @@ html,body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .container{ /*Muda o quadrado todo principal do chat*/
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1%;
-    margin-left: 1;
-    margin-right: 1%;
-    margin-bottom: 1%;
+    margin-top: 3%;
+    margin: 0;
+    
 }
+
 .blocktittle{ /*A parte de cima do bloco do chat*/
     background-color: rgb(155, 14, 131);
-    width: 500px;
+    width: 600px;
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
+.lucyContainer{/*Edita o conjunto da imagem da Lucy + Balão de coração*/
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: 0; /* Cola na borda inferior */
+    right: 0; /* Cola na borda direita */
+    margin: 0;/* Remove qualquer margem extra */
+    padding: 0; /* Garante que não há espaçamento interno indesejado */
+    z-index: 10;/* Garante que fique acima de outros elementos*/
+}
+.elemento{
+    position: relative;
+}
+#heart{ /*Balão de Coração*/
+    animation: subirDescer 2s infinite; 
+    position: absolute;
+    top:-20px;
+    left:-45px;
+}
+#lucyClose{ /*A figura grande da Lucy no site com boca fechada*/
+    position: relative;
+    width: 350px;
+    height: auto;   
+    margin: 10;
+
+}
+
 #block { /*A parte branca do Chat*/
-    background-color: #FFFCE6;
-    width: 500px;
+    background-color: var(--blockColor);
+    width: 600px;
     height: 600px;
 }
 #blockchat{ /*A parte de baixo do bloco do chat*/
     background-color: rgb(155, 14, 131);
-    width: 500px;
+    width: 600px;
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
-#lucyClose{ /*A figura grande da Lucy no site*/
-    position: fixed;
-    margin-top: 5%;
-    margin-left: 65%;
-    width: 500px;
-    height: auto;   
-}
+
+
+
 #lucyProfilePicture{ /*A imagem de perfil da Lucy*/ 
     height: 73px;
     width: auto;
@@ -57,11 +153,74 @@ html,body{
 }
 #mensager{ /*Chat*/
     background-color: #FFFCE6;
-    width: 360px;
+    color: black;
+    width: 460px;
     height: 30px;
     border:2px solid black ;
     border-radius:20px 20px 20px 20px ;
 }
-#button{
-    background-color: pink;
+
+
+/* [SESSÃO DO BOTÃO DE ENVIAR MENSAGEM ]*/
+.btn-animado {
+    border: 2px solid;
+    border-radius: 10px;
+    height: 25px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px; /*Reduz o tamanho da fonte*/
+    box-shadow: 4px 4px 0 00px black; 
+
+
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background: #eb27b0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; /* Importante para conter a animação dentro do botão */
+    transition: background-color 0.3s ease;
+}
+
+.btn-animado:hover {
+    background-color: #ff0095; /* Muda a cor ao passar o mouse */
+}
+
+.btn-animado:active {
+    background-color: #ff8ddd; /* Cor ao clicar */
+}
+
+.btn-animado::after {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 0, 140, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.btn-animado:active::after {
+    transform: translate(-50%, -50%) scale(1); /* Expande o círculo */
+    opacity: 0; /* Faz o efeito desaparecer ao final */
+}
+/* [ANIMAÇÃO DO CORAÇÃO ]*/
+@keyframes subirDescer { /*Animação do coração*/
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
 }
